@@ -1,5 +1,6 @@
 body{
   margin: 0 !important;
+  transition: background-color .5s;
 }
 
 html { scroll-behavior: smooth; }
@@ -10,20 +11,19 @@ html { scroll-behavior: smooth; }
   flex-wrap: nowrap;
 }
 
-.left{
+.sidenav{
   width: 350px;
   height: 100vh;
   background-color: #f5f5f5;
   align-content: center;
   text-align: center;
-  /*position: fixed;*/
   overflow-y: auto;
 }
 
-.left img{
+.sidenav img{
   width: 150px;
   height: 150px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   margin-top: 50px;
   border-radius: 90px;
 }
@@ -38,47 +38,43 @@ html { scroll-behavior: smooth; }
   color: #08c1f8;
 }
 
-.left ul li{
-  list-style: none;
+.sidenav ul{
+  padding-left: 0 !important;
 }
 
-.left ul li a{
+.sidenav ul li{
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.active{
+  color: #0fa5d2 !important;
+  text-decoration: underline !important;
+}
+
+.sidenav a{
   text-decoration: none;
   color: gray;
 }
 
-.left ul li a:active, a:current {
-  color: #0fa5d2;
+.main{
+  padding: 0 20px 25px 20px;
 }
 
-.right{
-  width: 100%;
-  background-color: #ffffff !important;
-}
-
-.right .home{
+.main .home{
+  padding-top: 25px;
   height: 500px;
-  background-color: rebeccapurple;
 }
 
-.right .about{
+.main .about{
   height: 500px;
-  background-color: navy;
 }
 
-.right .experience{
+.main .experience{
   height: 500px;
-  background-color: red;
 }
 
 
-
-
-
-body {
-  font-family: "Lato", sans-serif;
-  transition: background-color .5s;
-}
 
 .sidenav {
   height: 100%;
@@ -91,11 +87,12 @@ body {
   transition: 0.5s;
 }
 
-.sidenav .closebtn {
+.sidenav .btn-close {
   position: absolute;
   top: 0;
-  right: 25px;
-  margin-left: 50px;
+  right: 20px;
+  margin-left: 0;
+  line-height: 60px;
   text-decoration: none;
   color: #818181;
   display: block;
@@ -103,15 +100,27 @@ body {
   font-size:50px; cursor:pointer;
 }
 
-#main {
+.main {
   font-size: 36px;
   transition: margin-left .5s;
-  padding: 16px;
   margin-left: 350px;
 }
-
-#btnOpen{
+.main .btn-open {
   display: none;
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  line-height: 55px;
+  color: #ffffff;
+  background-color: #737171;
+  opacity: 0.5;
+  border-radius: 360px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  align-items: center;
+  transition: 0.3s;
+  font-size:25px; cursor:pointer;
 }
 
 @media screen and (max-height: 450px) {
@@ -122,21 +131,28 @@ body {
   .sidenav{
     width: 0;
   }
-  #main{
+  .main{
     margin-left: 0;
   }
-  #btnOpen{
-    display: inline;
+  .btn-open{
+    display: inline !important;
   }
 
 }
 
-.yo{
+.scroll-top{
+  display: none;
   position: fixed;
-  width: 30px;
-  height: 30px;
-  background: gray;
-  opacity: 90%;
+  width: 40px;
+  height: 40px;
+  border-radius: 360px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #737171;
+  opacity: 0.5;
   right: 20px;
   bottom: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  line-height: 45px;
 }
