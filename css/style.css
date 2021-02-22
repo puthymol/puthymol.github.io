@@ -1,9 +1,9 @@
+html { scroll-behavior: smooth; }
+
 body{
   margin: 0 !important;
   transition: background-color .5s;
 }
-
-html { scroll-behavior: smooth; }
 
 .container{
   display: flex;
@@ -12,12 +12,29 @@ html { scroll-behavior: smooth; }
 }
 
 .sidenav{
+  position: fixed;
   width: 350px;
   height: 100vh;
   background-color: #f5f5f5;
   align-content: center;
   text-align: center;
-  overflow-y: auto;
+  overflow-y: auto;  
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidenav .btn-close {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  margin-left: 0;
+  line-height: 60px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-size:50px; cursor:pointer;
 }
 
 .sidenav img{
@@ -45,6 +62,7 @@ html { scroll-behavior: smooth; }
 .sidenav ul li{
   list-style: none;
   padding-left: 0 !important;
+  line-height: 2em;
 }
 
 .active{
@@ -58,59 +76,38 @@ html { scroll-behavior: smooth; }
 }
 
 .main{
-  padding: 0 20px 25px 20px;
-}
-
-.main .home{
-  padding-top: 25px;
-  height: 500px;
-}
-
-.main .about{
-  height: 500px;
-}
-
-.main .experience{
-  height: 500px;
-}
-
-
-
-.sidenav {
-  height: 100%;
-  width: 350px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-}
-
-.sidenav .btn-close {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  margin-left: 0;
-  line-height: 60px;
-  text-decoration: none;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-  font-size:50px; cursor:pointer;
-}
-
-.main {
   font-size: 36px;
   transition: margin-left .5s;
   margin-left: 350px;
+  padding: 0 20px 25px 20px;
 }
-.main .btn-open {
+
+.main section:nth-child(2n){
+  background-color: #0fa5d2 !important;
+}
+
+.home{
+  height: 500px;
+}
+
+.about, .experience, .education, .project, .language, .habit{
+  height: 500px;
+}
+
+.header {
   display: none;
   position: fixed;
-  top: 20px;
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 70px;
+  text-align: center;
+}
+
+.header .btn-open {
+  position: absolute;
   left: 30px;
-  line-height: 55px;
+  top:10px;
+  line-height: 50px;
   color: #ffffff;
   background-color: #737171;
   opacity: 0.5;
@@ -123,6 +120,27 @@ html { scroll-behavior: smooth; }
   font-size:25px; cursor:pointer;
 }
 
+.header .name{
+  line-height: 70px;
+}
+
+.scroll-top{
+  display: none;
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  border-radius: 360px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #737171;
+  opacity: 0.5;
+  right: 20px;
+  bottom: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  line-height: 50px;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
 }
@@ -133,26 +151,10 @@ html { scroll-behavior: smooth; }
   }
   .main{
     margin-left: 0;
+    padding-top: 80px;
   }
-  .btn-open{
+  .header{
     display: inline !important;
   }
 
-}
-
-.scroll-top{
-  display: none;
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border-radius: 360px;
-  text-align: center;
-  color: #ffffff;
-  background-color: #737171;
-  opacity: 0.5;
-  right: 20px;
-  bottom: 20px;
-  font-size: 25px;
-  cursor: pointer;
-  line-height: 45px;
 }
