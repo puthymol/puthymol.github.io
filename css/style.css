@@ -76,21 +76,12 @@ body{
 }
 
 .main{
-  font-size: 36px;
   transition: margin-left .5s;
   margin-left: 350px;
   padding: 0 20px 25px 20px;
 }
 
-.main section:nth-child(2n){
-  background-color: #0fa5d2 !important;
-}
-
 .home{
-  height: 500px;
-}
-
-.about, .experience, .education, .project, .language, .habit{
   height: 500px;
 }
 
@@ -127,8 +118,8 @@ body{
 .scroll-top{
   display: none;
   position: fixed;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 360px;
   text-align: center;
   color: #ffffff;
@@ -136,9 +127,9 @@ body{
   opacity: 0.5;
   right: 20px;
   bottom: 20px;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
-  line-height: 50px;
+  line-height: 40px;
 }
 
 @media screen and (max-height: 450px) {
@@ -157,4 +148,57 @@ body{
     display: inline !important;
   }
 
+}
+
+.font-xxxLarge{
+  font-size: 32px !important;
+}
+
+.font-xxLarge{
+  font-size: 28px !important;
+}
+
+.font-xLarge{
+  font-size: 24px !important;
+}
+
+/* LANGUAGE */
+.language .content{
+  padding: 20px;
+}
+.language .row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.language .row div{
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+.language ul{
+  padding: 0 10px !important;
+}
+.language ul li{
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background-color: #cfcece;
+  border-radius: 360px;
+  float: left;
+  margin-right: 15px;
+}
+
+.language ul li:last-child{
+  margin-right: 0 !important;
+}
+
+.li-active{
+  background-color: #08c1f8 !important;
+}
+
+/* HABIT */
+.habit .content ul li{
+  list-style-type:circle;
+  line-height: 2em;
 }
